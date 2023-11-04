@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>premome</title>
+    <link rel="shortcut icon" href="media/favicon.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sedgwick+Ave+Display&display=swap" rel="stylesheet">
+
+  </head>
+
+  <body>
+    <p id="cim">PreMome_2023_11_04</p>
+    <p class="subtitle"> WORKSHOP </p>
+
+<!--     <a href="form.html">
+        <button class="gomb"> ( ˙▿˙ )	</button>
+      </a> -->
+
+      <container> 
+      <center>
+        <input type="password" placeholder=" ? ? ? " id="tutorial">
+        <button onclick="protectpasscode()">( ˙▿˙ )</button>
+        
+        <script>
+           function protectpasscode() {
+              const result = document.getElementById("tutorial").value;
+              let passcode = 123; // JELSZOOOOO
+              let space = '';
+              if (result == space) {
+                 alert("hmmmmmmmm")
+              } else {
+                 if (result == passcode) {
+                    window.location.href = 'form2.html'; // Redirect to form.html
+                 } else {
+                    alert("ajjaj");
+                    location.reload();
+                 }
+              }
+           }
+        </script>
+     </center>
+</container>
+
+
+    <script src="script.js"></script>
+  </body>
+
+</html>
