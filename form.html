@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>premome</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sedgwick+Ave+Display&display=swap" rel="stylesheet">
+
+  </head>
+
+  <body>
+    
+
+    <div id="step1" class="step">
+        <h2>1st: !</h2>
+        <form id="formStep1">
+            <textarea rows="5" placeholder="Enter text here" id="textStep1" required></textarea>
+            <button id="nextStep1">Next</button>
+        </form>
+    </div>
+
+    <div id="step2" class="step">
+        <h2>2nd: ?</h2>
+        <form id="formStep2">
+            <textarea rows="5" placeholder="Enter text here" id="textStep2" required></textarea>
+            <button id="nextStep2">Next</button>
+        </form>
+    </div>
+
+    <div id="step3" class="step">
+        <h2>3rd: ? ?</h2>
+        <form id="formStep3">
+            <textarea rows="5" placeholder="Enter text here" id="textStep3" required></textarea>
+            <button id="nextStep3">Next</button>
+        </form>
+    </div>
+
+    <div id="step4" class="step">
+        <h2>4th: ? ? ?</h2>
+        <form id="formStep4">
+            <textarea rows="5" placeholder="Enter text here" id="textStep4" required></textarea>
+            <button id="submitForm">Submit</button>
+        </form>
+    </div>
+    
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const steps = document.querySelectorAll('.step');
+            let currentStep = 0;
+            const formData = {};
+
+            function showStep(stepIndex) {
+                steps.forEach((step, index) => {
+                    if (index === stepIndex) {
+                        step.style.display = 'block';
+                    } else {
+                        step.style.display = 'none';
+                    }
+                });
+            }
+
+            function updateFormData() {
+                if (currentStep === 0) {
+                    formData.textStep1 = document.getElementById('textStep1').value;
+                } else if (currentStep === 1) {
+                    formData.textStep2 = document.getElementById('textStep2').value;
+                } else if (currentStep === 2) {
+                    formData.textStep3 = document.getElementById('textStep3').value;
+                } else if (currentStep === 3) {
+                    formData.textStep4 = document.getElementById('textStep4').value;
+                }
+            }
+
+            showStep(currentStep);
+
+            document.getElementById('nextStep1').addEventListener('click', function (e) {
+                e.preventDefault();
+                updateFormData();
+                currentStep = 1;
+                showStep(currentStep);
+            });
+
+            document.getElementById('nextStep2').addEventListener('click', function (e) {
+                e.preventDefault();
+                updateFormData();
+                currentStep = 2;
+                showStep(currentStep);
+            });
+
+            document.getElementById('nextStep3').addEventListener('click', function (e) {
+                e.preventDefault();
+                updateFormData();
+                currentStep = 3;
+                showStep(currentStep);
+            });
+
+            document.getElementById('submitForm').addEventListener('click', function (e) {
+                e.preventDefault();
+                updateFormData();
+                // You can handle the data as needed, e.g., send it to a server or display it
+                console.log(formData);
+                window.location.href = 'end.html';
+            });
+        });
+    </script>
+
+
+  </body>
+
+</html>
